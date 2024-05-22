@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <title>Suigram</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="container">
@@ -11,11 +13,67 @@
         <h1>Suigram</h1>
     </section>
     <section class="center-panel">
-        <form class="Search-bar">
-            <input type="search" placeholder="Search..." id="search">
-            <input type="button" value="Search" id="button">
-        </form>
+        <header>
+            <nav class="navbar-header">
+                <label for="search" class="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" name="search" id="search" placeholder="Search..."></label>
+                <button>Search</button>
+            </nav>
+        </header>
+        <main>
+            <section class="stories">
+                <h2>Stories</h2>
+                <div class="story-cards">
+                    <div class="story one">
+                        <div class="story-author">
+                            <div class="author-img">
+                                <img src="https://images.pexels.com/photos/7562313/pexels-photo-7562313.jpeg" alt="author">
+                            </div>
+                            <p>christon</p>
+                        </div>
+                    </div>
+                    <div class="story two">
+                        <div class="story-author">
+                            <div class="author-img">
+                                <img src="https://images.pexels.com/photos/7322232/pexels-photo-7322232.jpeg" alt="author">
+                            </div>
+                            <p>smith</p>
+                        </div>
+                    </div>
+                    <div class="story three">
+                        <div class="story-author">
+                            <div class="author-img">
+                                <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="author">
+                            </div>
+                            <p>Wambs</p>
+                        </div>
+                    </div>
+                    <div class="story four">
+                        <div class="story-author">
+                            <div class="author-img">
+                                <img src="https://images.pexels.com/photos/7562313/pexels-photo-7562313.jpeg" alt="author" loading="lazy">
+                            </div>
+                            <p>Ali</p>
+                        </div>
+                    </div>
+                    <div class="story five">
+                        <div class="story-author">
+                            <div class="author-img">
+                                <img src="https://images.pexels.com/photos/7322232/pexels-photo-7322232.jpeg" alt="author">
+                            </div>
+                            <p>Freed</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </section>
-    <section class="user-panel"></section>
+    <section class="user-panel">
+        <div class="profiles">
+            <p class="profile-name">Manueldezman</p>
+            <div class="profile-img">
+                <img src alt="user avatar">
+            </div>
+        </div>
+    </section>
 </body>
 </html>

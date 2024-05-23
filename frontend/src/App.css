@@ -2,39 +2,38 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   gap: 10px;
-  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 .sidebar {
   padding: 20px;
+  background-color: #141414;
 }
 .left-side-bar {
   grid-column: 1;
-  border-right: 1px solid #dfdcdc;
 }
 .main {
-  background-color: #f8f8f8;
   grid-column: 2 / 3;
 }
 .right-side-bar  {
   grid-column: 3;
-  border-left: 1px solid #dfdcdc;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 /* Main */
 .navbar-header {
   display: flex;
   align-items: center;
-  background-color: #FFF;
-  padding: 20px 0;
+  padding: 20px;
   gap: 20px;
 }
 .navbar-header .search {
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: #f8f8f8;
-  border: .5px solid #dfdcdc;
-  border-radius: 10px;
+  background-color: #2f2f2f;
+  border-radius: 5px;
   padding: 10px;
   flex: 1;
 }
@@ -46,20 +45,18 @@
   font-size: 1.05rem;
 }
 .navbar-header button {
-  background-color: #000;
+  background-color: #c71f1f;
   padding: 10px 15px;
-  border: .5px solid #000;
-  outline: none;
-  color: #FFF;
-  border-radius: 10px;
-  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
   font-size: 1.05rem;
 }
 main {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 48px;
 }
 .stories {
   display: flex;
@@ -77,9 +74,8 @@ main {
   background-position: center;
   background-size: cover;
   flex-basis: 15%;
-  flex-shrink: 0;
   display: flex;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
 .story-author {
@@ -119,12 +115,10 @@ main {
 .memes-cards .meme {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
-  /* border: 1px solid #000; */
-  background-color: #FFF;
+  background-color: #141414;
   border-radius: 10px 10px 0 0;
-  box-shadow: 1px 1px 3px #000;
 }
 .meme .owner {
   display: flex;
@@ -132,8 +126,8 @@ main {
   align-items: flex-end;
 }
 .meme .owner .owner-img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid #000;
@@ -144,10 +138,16 @@ main {
 .meme .meme-img {
   max-height: 400px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .meme-img img {
   width: 100%;
+}
+.meme .socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.3rem;
 }
 /* Left sidebar */
 
@@ -156,12 +156,14 @@ main {
   
 }
 .right-side-bar .profiles {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid #dfdcdc;
-  padding: 5px;
-  border-radius: 10px;
+  /* background-color: #2f2f2f; */
+  background-color: #c71f1f;
+  width: 100%;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  border-radius: 5px;
   justify-content: space-between;
 }
 .right-side-bar .profiles .profile-img {
@@ -174,4 +176,53 @@ main {
 .profiles .profile-img img {
   width: 35px;
   height: 35px;
+}
+.upcoming {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.upcoming-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.upcoming-feats .feat {
+  background-color: #2f2f2f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  line-height: 1.5;
+  font-size: .9rem;
+}
+.suggested {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.suggested .suggested-memes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.suggested-memes .card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: #2f2f2f;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: .9rem;
+}
+.suggested-memes .card .img {
+  flex-basis: 40%;
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 55px;
+}
+.suggested-memes .card img {
+  width: 100%;
+}
+.memes .head-desc {
+  flex-basis: 70%;
 }

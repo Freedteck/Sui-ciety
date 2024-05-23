@@ -75,6 +75,11 @@ const Memes = () => {
             <div className="meme-img">
               <img src={meme.memeMedia} alt="" />
             </div>
+            <div className="socials">
+            <i class="fa-regular fa-thumbs-up"></i>
+            <i class="fa-regular fa-message"></i>
+            <i class="fa-regular fa-heart"></i>
+            </div>
             <p>{meme.description}</p>
           </div>
         ))}

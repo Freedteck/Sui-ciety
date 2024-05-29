@@ -37,7 +37,24 @@ public entry fun vote_meme(meme: &mut Meme, voter: address) {
    let new_vote_count = meme.vote_count + 1;
   meme.vote_count = new_vote_count;
 }
-public entry fun sui_reward(){
+
+public fun get_top_meme(meme: &Meme): UID {
+  let mut highest_vote_count = 0;
+  let mut top_meme_id: UID = None;
+
+   // Loop through all memes
+  let meme_iterator = meme.get_memes();
+  for (id, meme) in meme_iterator {
+    let currentVoteCount = meme.vote_count;
+
+    // Check if current meme has higher vote count
+    if currentVoteCount > topVoteCount {
+      topMemeId = Some(id);
+      topVoteCount = currentVoteCount;
+    }
+}
+
+public entry fun sui_reward(meme: &Meme,owner: adress){
   
 }
 }

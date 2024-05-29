@@ -12,20 +12,28 @@ public struct Meme has key, store {
     id: UID,
     link: string::String,
     owner_name: string::String,
+    owner: address,
     vote_count: u64,
   }
-    fun new(link: string::String, owner_name: string::String, vote_count: u64, ctx: &mut TxContext): Meme {
+public struct MemeCollection has key, store{
+  meme_id: 
+
+}
+    fun new(link: string::String, owner: adress, owner_name: string::String, vote_count: u64, ctx: &mut TxContext): Meme {
+      assert!(ctx.is_mut(owner), "Caller must be the owner");
   Meme {
     id: object::new(ctx),
     link: link,
     vote_count: vote_count,
+    owner: self.owner
     owner_name: owner_name
   }
 }
-public entry fun create_new_meme(link: string::String, owner_name: string::String, ctx: &mut TxContext) {
+public entry fun create_new_meme(link: string::String,owner: address, owner_name: string::String, ctx: &mut TxContext) {
   let vote_count: u64 = 0;
-  let new_meme = new(link, owner_name, vote_count , ctx);
-  transfer::transfer(new_meme, tx_context::sender(ctx));
+  let new_meme = new(link, owner, owner_name, vote_count , ctx);
+  let meme_collection: &mut MemeCollection;
+  meme_collection.add_meme(new_meme);;
 }
 public entry fun vote_meme(meme: &mut Meme, voter: address) {
    let new_vote_count = meme.vote_count + 1;
@@ -45,4 +53,12 @@ public fun get_top_meme(memes: &Meme): UID {
 
   top_meme_id
 }
+}
+impl MemeCollection {
+
+    pub fun add_meme(collection: &mut self, new_meme: Meme) {
+        self.memes.push(new_meme); 
+    }
+
+    // ... (Other functions for managing memes within the collection)
 }

@@ -57,4 +57,12 @@ public fun get_top_meme(meme: &Meme): UID {
 public entry fun sui_reward(meme: &Meme,owner: adress){
   
 }
+impl MemeCollection {
+
+    pub fun add_meme(collection: &mut self, new_meme: Meme) {
+        self.memes.push(new_meme); 
+    }
+
+    // ... (Other functions for managing memes within the collection)
+}
 }
